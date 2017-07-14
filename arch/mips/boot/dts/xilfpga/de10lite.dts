@@ -7,7 +7,7 @@
 
 	memory {
 		device_type = "memory";
-		reg = <0x0 0x03FFDFFF>;
+		reg = <0x0 0x04000000>;
 		reg-io-width = <4>;
 	};
 

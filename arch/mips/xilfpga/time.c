@@ -24,7 +24,6 @@ void __init plat_time_init(void)
 	write_c0_count(0);
 	write_c0_compare(0xffff);
 
-
 	of_clk_init(NULL);
 	clocksource_probe();
 
@@ -40,6 +39,6 @@ void __init plat_time_init(void)
 		return;
 	}
 
-	mips_hpt_frequency = clk_get_rate(clk) / 2;
+	mips_hpt_frequency = clk_get_rate(clk);
 	clk_put(clk);
 }
