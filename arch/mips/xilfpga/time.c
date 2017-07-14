@@ -20,6 +20,10 @@ void __init plat_time_init(void)
 {
 	struct device_node *np;
 	struct clk *clk;
+	
+	write_c0_count(0);
+	write_c0_compare(0xffff);
+
 
 	of_clk_init(NULL);
 	clocksource_probe();

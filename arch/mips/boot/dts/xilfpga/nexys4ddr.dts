@@ -17,7 +17,7 @@
 		interrupt-controller;
 		compatible = "mti,cpu-interrupt-controller";
 	};
-
+/*
 	axi_gpio: gpio@10600000 {
 		#gpio-cells = <1>;
 		compatible = "xlnx,xps-gpio-1.00.a";
@@ -30,7 +30,7 @@
 		xlnx,is-dual = <0x0>;
 		xlnx,tri-default = <0xffffffff>;
 	} ;
-
+*/
 	axi_uart16550: serial@10400000 {
 		compatible = "ns16550a";
 		reg = <0x10400000 0x10000>;

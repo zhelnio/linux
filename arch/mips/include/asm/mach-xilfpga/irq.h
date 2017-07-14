@@ -11,7 +11,7 @@
 #ifndef __MIPS_ASM_MACH_XILFPGA_IRQ_H__
 #define __MIPS_ASM_MACH_XILFPGA_IRQ_H__
 
-#define NR_IRQS 32
+#define NR_IRQS 8
 
 #include_next <irq.h>
 
