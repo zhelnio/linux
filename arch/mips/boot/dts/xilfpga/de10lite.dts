@@ -1,0 +1,37 @@
+/dts-v1/;
+
+#include "microAptiv.dtsi"
+
+/ {
+	compatible = "terasic,de10lite";
+
+	memory {
+		device_type = "memory";
+		reg = <0x0 0x03FFDFFF>;
+		reg-io-width = <4>;
+	};
+
+	cpuintc: interrupt-controller {
+		#address-cells = <0>;
+		#interrupt-cells = <1>;
+		interrupt-controller;
+		compatible = "mti,cpu-interrupt-controller";
+	};
+
+	uart: serial@10400000 {
+		compatible = "ns16550a";
+		reg = <0x10400000 0x10000>;
+
+		reg-shift = <2>;
+		reg-offset = <0x1000>;
+
+		clocks	= <&ext>;
+
+		interrupt-parent = <&cpuintc>;
+		interrupts = <0>;
+	};
+};
+
+&ext {
+	clock-frequency = <50000000>;
+};

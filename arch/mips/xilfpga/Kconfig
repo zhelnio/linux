@@ -5,5 +5,10 @@ choice
 
 config XILFPGA_NEXYS4DDR
 	bool "Nexys4DDR by Digilent"
+	select USE_GENERIC_EARLY_PRINTK_8250
+	select XILINX_INTC
+
+config XILFPGA_DE10LITE
+	bool "DE10-Lite by Terasic"
 
 endchoice

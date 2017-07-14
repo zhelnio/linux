@@ -11,7 +11,12 @@
 #ifndef __MIPS_ASM_MACH_XILFPGA_IRQ_H__
 #define __MIPS_ASM_MACH_XILFPGA_IRQ_H__
 
-#define NR_IRQS 32
+#ifdef CONFIG_XILFPGA_NEXYS4DDR
+	#define NR_IRQS 32
+#endif
+#ifdef CONFIG_XILFPGA_DE10LITE
+	#define NR_IRQS 8
+#endif
 
 #include_next <irq.h>
 

@@ -1,4 +1,5 @@
 dtb-$(CONFIG_XILFPGA_NEXYS4DDR)	+= nexys4ddr.dtb
+dtb-$(CONFIG_XILFPGA_DE10LITE)	+= de10lite.dtb
 
 obj-y				+= $(patsubst %.dtb, %.dtb.o, $(dtb-y))
 
