@@ -1,5 +1,7 @@
 /dts-v1/;
 
+#include <dt-bindings/gpio/gpio.h>
+
 #include "microAptiv.dtsi"
 
 / {
@@ -18,9 +20,9 @@
 		compatible = "mti,cpu-interrupt-controller";
 	};
 
-	uart: serial@10400000 {
+	uart: serial@b0400000 {
 		compatible = "ns16550a";
-		reg = <0x10400000 0x10000>;
+		reg = <0xb0400000 0x10000>;
 
 		reg-shift = <2>;
 		reg-offset = <0x1000>;
@@ -30,6 +32,15 @@
 		interrupt-parent = <&cpuintc>;
 		interrupts = <0>;
 	};
+
+	gpio: gpio@bf800000 {
+		compatible = "wd,mbl-gpio";
+		reg = <0xbf800000 0x4>;
+
+		reg-names = "dat";
+		gpio-controller;
+		#gpio-cells = <2>;
+	} ;
 };
 
 &ext {
