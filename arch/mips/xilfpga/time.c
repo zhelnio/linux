@@ -21,8 +21,10 @@ void __init plat_time_init(void)
 	struct device_node *np;
 	struct clk *clk;
 	
+#ifdef CONFIG_XILFPGA_DE10LITE	
 	write_c0_count(0);
 	write_c0_compare(0xffff);
+#endif
 
 	of_clk_init(NULL);
 	clocksource_probe();
